@@ -4,7 +4,6 @@ function About() {
   return (
     <section className="about">
       <h2>Sobre mí</h2>
-      <p>Tengo una gran pasión por la tecnología, un fuerte compromiso con el aprendizaje continuo y me encantan los desafíos.</p>
       <p>
         Mi objetivo es dar mis primeros pasos en el mundo profesional, desarrollando mis habilidades técnicas y creciendo tanto a nivel laboral como
         personal.

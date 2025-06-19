@@ -13,7 +13,9 @@ import { SiGooglecloudstorage } from "react-icons/si";
 import { SiMui } from "react-icons/si";
 import { SiMongodb } from "react-icons/si";
 import { SiMariadb } from "react-icons/si";
-
+import { IoLogoVercel } from "react-icons/io5";
+import { FaSass } from "react-icons/fa";
+import Contact from "./components/Contact/Contact";
 
 function App() {
   const [darkMode, setDarkMode] = useState(true);
@@ -34,13 +36,14 @@ function App() {
       <About />
       <h1>Proyectos</h1>
       <Proyect
-        proyectText="Proyecto Final de la carrera de Ingenieria en Sitemas de Información. Plataforma de gestión para la ONG Módulo Sanitario. Permite la planificación, análisis, asignación, construcción y control de módulos sanitarios para familias de bajos recursos de la ciudad de Córdoba. Incluyendo la generación de formularios, reportes, métricas para la toma de decisiones gestión de agenda y mapa interactivo."
         proyectTitle="Gestión de Módulo Sanitario - GMS"
+        proyectText="Proyecto Final de la carrera de Ingenieria en Sitemas de Información. Plataforma de gestión para la ONG Módulo Sanitario. Permite la planificación, análisis, asignación, construcción y control de módulos sanitarios para familias de bajos recursos de la ciudad de Córdoba. Incluyendo la generación de formularios, reportes, métricas para la toma de decisiones gestión de agenda y mapa interactivo."
         proyectImages={imageArrayGMS}
         proyectRol="Desarrollador Front-End, Scrum Master, Tester."
         technologies={[
           <>
             <TecButton toolTip="React" icon={<SiReact size={32} color="61DAFB" />} color="61DAFB"></TecButton>
+            <TecButton toolTip="SCSS" icon={<FaSass size={32} color="cf6c9c" />} color="cf6c9c"></TecButton>
             <TecButton toolTip="TypeScript" icon={<SiTypescript size={32} color="3178c6" />} color="3178c6"></TecButton>
             <TecButton toolTip="NestJs" icon={<SiNestjs size={32} color="d9224c" />} color="d9224c"></TecButton>
             <TecButton toolTip="Auth0" icon={<SiAuth0 size={32} color="e45123" />} color="e45123"></TecButton>
@@ -49,9 +52,26 @@ function App() {
             <TecButton toolTip="Material UI" icon={<SiMui size={32} color="0a8cd2" />} color="0a8cd2"></TecButton>
             <TecButton toolTip="MongoDB" icon={<SiMongodb size={32} color="54b345" />} color="54b345"></TecButton>
             <TecButton toolTip="MariaDB" icon={<SiMariadb size={32} color="1e819f" />} color="1e819f"></TecButton>
+            <TecButton toolTip="Vercel" icon={<IoLogoVercel size={32} />} color="ffffff"></TecButton>
           </>,
         ]}
       />
+      <Proyect
+        proyectTitle="Portfolio personal"
+        proyectText="Mi portfolio personal desarrollado para poder documentar y registrar mis proyectos y experiencias."
+        proyectRol="Desarrollador Front-End"
+        proyectRepository="https://github.com/lucasborgatta/Borgatta-Lucas-Portfolio"
+        technologies={[
+          <>
+            <TecButton toolTip="React" icon={<SiReact size={32} color="61DAFB" />} color="61DAFB"></TecButton>
+            <TecButton toolTip="TypeScript" icon={<SiTypescript size={32} color="3178c6" />} color="3178c6"></TecButton>
+            <TecButton toolTip="Material UI" icon={<SiMui size={32} color="0a8cd2" />} color="0a8cd2"></TecButton>
+            <TecButton toolTip="Vercel" icon={<IoLogoVercel size={32} />} color="ffffff"></TecButton>
+          </>,
+        ]}
+      />
+      <h1>Contacto</h1>
+      <Contact></Contact>
     </>
   );
 }

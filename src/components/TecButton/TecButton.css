@@ -43,6 +43,11 @@
   -webkit-touch-callout: none;
 }
 
+.tec-button:disabled {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+}
+
 .tec-button-custom-tooltip {
   opacity: 0;
   transform: translateY(0px);

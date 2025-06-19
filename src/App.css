@@ -3,16 +3,18 @@
   --button-bg-color: #ffffff;
   --button-box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
   --text-color: #000000;
+  --text-color-invert: #fff;
   --accent-color: #fcee21;
 
-  --font-main: 'Inter', sans-serif;
+  --font-main: "Inter", sans-serif;
 }
 
-[data-theme='dark'] {
+[data-theme="dark"] {
   --bg-color: #000;
   --button-bg-color: #222222;
   --button-box-shadow: rgba(255, 255, 255, 0.25) 0 8px 15px;
   --text-color: #f5f5f5;
+  --text-color-invert: #000000;
   --accent-color: #fcee21;
 }
 
@@ -32,7 +34,7 @@ section {
 }
 
 h1 {
-  margin: 0 2rem;
+  margin: 1rem 1rem;
 }
 
 @media (max-width: 600px) {
