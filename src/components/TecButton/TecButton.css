@@ -27,16 +27,20 @@
   user-select: none;
   touch-action: manipulation;
   will-change: transform;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
 }
 
 .tec-button:hover {
   box-shadow: var(--button-box-shadow);
-  transform: translateY(-8px) !important;
+  transform: translateY(-8px);
 }
 
 .tec-button:active {
   box-shadow: none;
   transform: translateY(0);
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
 }
 
 .tec-button-custom-tooltip {

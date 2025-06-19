@@ -11,7 +11,7 @@ function SideBar() {
   };
 
   const DrawerList = (
-    <Box sx={{ width: 250 }} role="presentation" onClick={toggleDrawer(false)}>
+    <Box sx={{ width: 150 }} role="presentation" className="sideBar" onClick={toggleDrawer(false)}>
       <List>
         <ListItem disablePadding>
           <ListItemButton>

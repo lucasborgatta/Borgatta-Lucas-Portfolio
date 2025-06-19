@@ -13,8 +13,12 @@
   .technologies-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 15px;
     margin: 20px 0px 45px 0px;
+
+    @media (max-width: 768px) {
+      justify-content: center;
+    }
   }
 
   .proyect-image-container {
@@ -24,10 +28,6 @@
           border-radius: 15px;
           img {
             border-radius: 15px;
-
-            @media(max-width: 768px) {
-                width: 85%;
-            }
           }
         }
         .control-arrow, .control-arrow:hover {
@@ -36,6 +36,7 @@
             transform: unset;
             height: 50%;
             top: 25%;
+            border-radius: 15px;
         }
       }
     }

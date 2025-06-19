@@ -38,6 +38,8 @@
     -webkit-user-select: none;
     touch-action: manipulation;
     will-change: transform;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
   }
 
   .button:disabled {
@@ -52,6 +54,8 @@
   .button:active {
     box-shadow: none;
     transform: translateY(0);
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
   }
 }
 

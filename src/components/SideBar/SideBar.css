@@ -1,5 +1,16 @@
 .sideBar-container {
-    .MuiButtonBase-root {
-        color: var(--text-color);
+  .MuiButtonBase-root {
+    color: var(--text-color);
+  }
+}
+
+.MuiDrawer-modal {
+  .MuiPaper-root {
+    background-color: var(--button-bg-color);
+    .sideBar {
+        .MuiTypography-root {
+            color: var(--text-color);
+        }
     }
+  }
 }

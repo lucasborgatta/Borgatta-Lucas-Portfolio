@@ -37,10 +37,17 @@ header {
       border-radius: 40px;
       height: fit-content;
       background-color: var(--button-bg-color);
+      -webkit-tap-highlight-color: transparent;
+      -webkit-touch-callout: none;
 
       @media (max-width: 768px) {
         padding: 0.5em;
       }
+    }
+
+    .dark-mode-button:active {
+      -webkit-tap-highlight-color: transparent;
+      -webkit-touch-callout: none;
     }
   }
 }
