@@ -21,7 +21,7 @@ function Header({
     <header>
       {isMobile ? (
         <>
-          <SideBar></SideBar>
+          <SideBar onScrollTo={onScrollTo}></SideBar>
           <h1>Borgatta Lucas</h1>
           <div className="header-container">
             <Tooltip title={darkMode ? "Modo claro" : "Modo oscuro"} placement="left">

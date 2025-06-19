@@ -1,9 +1,9 @@
 import { Box, Drawer, IconButton, List, ListItem, ListItemButton, ListItemText } from "@mui/material";
 import { useState } from "react";
 import DehazeIcon from "@mui/icons-material/Dehaze";
-import './SideBar.css'
+import "./SideBar.css";
 
-function SideBar() {
+function SideBar({ onScrollTo }: { onScrollTo: (section: "proyectos" | "contacto" | "sobreMi") => void }) {
   const [open, setOpen] = useState(false);
 
   const toggleDrawer = (newOpen: boolean) => () => {
@@ -13,21 +13,37 @@ function SideBar() {
   const DrawerList = (
     <Box sx={{ width: 150 }} role="presentation" className="sideBar" onClick={toggleDrawer(false)}>
       <List>
+
         <ListItem disablePadding>
-          <ListItemButton>
-            <ListItemText primary={"Proyectos"} />
-          </ListItemButton>
-        </ListItem>
-        <ListItem disablePadding>
-          <ListItemButton>
+          <ListItemButton
+            onClick={() => {
+              onScrollTo("sobreMi");
+            }}
+          >
             <ListItemText primary={"Sobre mí"} />
           </ListItemButton>
         </ListItem>
+
         <ListItem disablePadding>
-          <ListItemButton>
+          <ListItemButton
+            onClick={() => {
+              onScrollTo("proyectos");
+            }}
+          >
+            <ListItemText primary={"Proyectos"} />
+          </ListItemButton>
+        </ListItem>
+        
+        <ListItem disablePadding>
+          <ListItemButton
+            onClick={() => {
+              onScrollTo("contacto");
+            }}
+          >
             <ListItemText primary={"Contacto"} />
           </ListItemButton>
         </ListItem>
+        
       </List>
     </Box>
   );
