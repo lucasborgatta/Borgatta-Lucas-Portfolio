@@ -4,7 +4,21 @@ import { Carousel } from "react-responsive-carousel";
 import { useState } from "react";
 import { Fade, Modal } from "@mui/material";
 
-function Proyect({ proyectTitle, proyectText, proyectImages }: { proyectTitle: string; proyectText: string; proyectImages: string[] }) {
+function Proyect({
+  proyectTitle,
+  proyectText,
+  proyectRol,
+  proyectRepository,
+  proyectImages,
+  technologies,
+}: {
+  proyectTitle: string;
+  proyectText: string;
+  proyectRol: string;
+  proyectRepository?: string;
+  proyectImages: string[];
+  technologies: React.ReactNode[];
+}) {
   const [imageSelected, setImageSelected] = useState<string>("");
   const [open, setOpen] = useState(false);
 
@@ -13,25 +27,35 @@ function Proyect({ proyectTitle, proyectText, proyectImages }: { proyectTitle: s
       <div className="proyect-text-container">
         <h2>{proyectTitle}</h2>
         <p>{proyectText}</p>
+        <h3>Rol en el proyecto: {proyectRol}</h3>
+        <h3>Tecnologias utilizadas</h3>
+        <div className="technologies-container">{technologies}</div>
       </div>
-      <div className="proyect-image-container">
-        <Carousel
-          showThumbs={false}
-          showStatus={false}
-          showArrows
-          infiniteLoop
-          autoPlay={!open}
-          onClickItem={(index) => {
-            const selected = proyectImages ? proyectImages[index] : "";
-            setImageSelected(selected);
-            setOpen(true);
-          }}
-        >
-          {proyectImages?.map((imageURL, index) => (
-            <img src={imageURL} alt={`Imagen ${index + 1}`} />
-          ))}
-        </Carousel>
+      <div>
+        <div className="proyect-image-container">
+          <Carousel
+            showThumbs={false}
+            showStatus={false}
+            showArrows
+            swipeable
+            infiniteLoop
+            autoPlay={!open}
+            interval={4500}
+            transitionTime={800}
+            onClickItem={(index) => {
+              const selected = proyectImages ? proyectImages[index] : "";
+              setImageSelected(selected);
+              setOpen(true);
+            }}
+          >
+            {proyectImages?.map((imageURL, index) => (
+              <img src={imageURL} alt={`Imagen ${index + 1}`} />
+            ))}
+          </Carousel>
+        </div>
+        {proyectRepository && <h3>Repositorio</h3>}
       </div>
+
       <Modal
         className={"modal-image-fullScreen"}
         open={open}
@@ -47,7 +71,11 @@ function Proyect({ proyectTitle, proyectText, proyectImages }: { proyectTitle: s
         }}
       >
         <Fade in={open} timeout={500} className={"image-full-screen"}>
-          <img src={imageSelected} alt="Error al cargar la imagen" style={{ maxHeight: "90%", maxWidth: "90%", display: "flex" }} />
+          <img
+            src={imageSelected}
+            alt="Error al cargar la imagen"
+            style={{ maxHeight: "90%", maxWidth: "90%", display: "flex", borderRadius: "15px" }}
+          />
         </Fade>
       </Modal>
     </div>
