@@ -32,6 +32,11 @@ function Proyect({
     window.open(url, "_blank");
   };
 
+  const openLink = () => {
+    const url = proyectLink;
+    window.open(url, "_blank");
+  };
+
   return (
     <div className="proyect">
       <div className="proyect-text-container">
@@ -80,7 +85,7 @@ function Proyect({
           <>
             <h3>Repositorio</h3>
             <div className="technologies-container">
-              <TecButton toolTip="Demo/Página" icon={<TbWorldWww size={32} />} color="ffffff" disabled={!proyectLink}></TecButton>
+              <TecButton toolTip="Demo/Página" icon={<TbWorldWww size={32} />} color="ffffff" disabled={!proyectLink} onClick={openLink}></TecButton>
               <TecButton
                 toolTip="Github"
                 icon={<FaGithub size={32} />}

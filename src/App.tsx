@@ -61,6 +61,7 @@ function App() {
         proyectText="Mi portfolio personal desarrollado para poder documentar y registrar mis proyectos y experiencias."
         proyectRol="Desarrollador Front-End"
         proyectRepository="https://github.com/lucasborgatta/Borgatta-Lucas-Portfolio"
+        proyectLink="https://borgattalucas-portfolio.vercel.app/"
         technologies={[
           <>
             <TecButton toolTip="React" icon={<SiReact size={32} color="61DAFB" />} color="61DAFB"></TecButton>
