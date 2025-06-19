@@ -1,0 +1,37 @@
+.proyect {
+  padding: 2rem 1rem;
+  margin: 0rem 1rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 30px;
+
+  @media(max-width: 1024px) {
+    flex-wrap: wrap;
+    margin: 0;
+  }
+
+  .proyect-image-container {
+    .carousel-root {
+      .carousel-slider {
+        .slider-wrapper {
+          border-radius: 15px;
+          img {
+            border-radius: 15px;
+            width: 95%;
+
+            @media(max-width: 768px) {
+                width: 85%;
+            }
+          }
+        }
+        .control-prev.control-arrow::before {
+          border-right: 8px solid var(--text-color);
+        }
+        .control-next.control-arrow::before {
+          border-left: 8px solid var(--text-color);
+        }
+      }
+    }
+  }
+}

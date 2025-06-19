@@ -3,7 +3,6 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  border-bottom: 1px solid var(--text-color);
   gap: 20px;
   flex-wrap: wrap;
 
@@ -16,28 +15,20 @@ header {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
+    align-items: center;
     gap: 20px;
-
-    button {
-      background: none;
-      display: flex;
-      align-items: center;
-      text-align: center;
-      border: 1px solid var(--text-color);
-      color: var(--text-color);
-      padding: 0.5rem 0.5rem;
-      cursor: pointer;
-      border-radius: 20px;
-    }
 
     .dark-mode-button {
       background: none;
       display: flex;
+      justify-content: center;
+      align-items: center;
       border: 1px solid var(--text-color);
       color: var(--text-color);
-      padding: 0.5rem 0.5rem;
       cursor: pointer;
-      border-radius: 20px;
+      border-radius: 40px;
+      height: fit-content;
+      background-color: var(--button-bg-color);
     }
   }
 }
