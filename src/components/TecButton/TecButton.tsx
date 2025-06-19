@@ -1,4 +1,3 @@
-import { Tooltip } from "@mui/material";
 import type { ReactNode } from "react";
 import "./TecButton.css";
 
