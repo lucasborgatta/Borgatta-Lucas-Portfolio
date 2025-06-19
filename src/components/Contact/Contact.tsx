@@ -3,8 +3,9 @@ import { FaWhatsapp } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import "./Contact.css";
+import { forwardRef } from "react";
 
-function Contact() {
+const Contact = forwardRef<HTMLDivElement>((_props, ref) => {
   const openWhatsAppChat = () => {
     const url = `https://wa.me/+5493585619668`;
     window.open(url, "_blank");
@@ -21,7 +22,7 @@ function Contact() {
   };
 
   return (
-    <div className="contact-container">
+    <div ref={ref} className="contact-container">
       <div className="contact-buttons-container">
         {/* <h3>lucasborgatta00@gmail.com</h3> */}
         <TecButton toolTip="Whatsapp" icon={<FaWhatsapp size={32} color="1b9c12" />} color="1b9c12" onClick={openWhatsAppChat}></TecButton>
@@ -40,6 +41,6 @@ function Contact() {
       </div> */}
     </div>
   );
-}
+});
 
 export default Contact;

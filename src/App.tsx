@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Header from "./components/Header/Header";
 import Hero from "./components/Hero/Hero";
 import About from "./components/About/About";
@@ -16,9 +16,25 @@ import { SiMariadb } from "react-icons/si";
 import { IoLogoVercel } from "react-icons/io5";
 import { FaSass } from "react-icons/fa";
 import Contact from "./components/Contact/Contact";
+import ButtonScrollTop from "./components/ButtonScrollTop/ButtonScrollTop";
 
 function App() {
   const [darkMode, setDarkMode] = useState(true);
+
+  const sectionRefs = {
+    sobreMi: useRef<HTMLDivElement>(null),
+    proyectos: useRef<HTMLDivElement>(null),
+    contacto: useRef<HTMLDivElement>(null),
+  };
+
+  const scrollToSection = (section: keyof typeof sectionRefs) => {
+    const ref = sectionRefs[section];
+    if (ref.current) {
+      const y = ref.current.getBoundingClientRect().top + window.scrollY - 80; // offset si tenés navbar fija
+      window.scrollTo({ top: y, behavior: "smooth" });
+    }
+  };
+
   const imagesGMS = import.meta.glob("/src/assets/GMS/*.png", {
     eager: true,
   });
@@ -31,10 +47,10 @@ function App() {
 
   return (
     <>
-      <Header darkMode={darkMode} setDarkMode={setDarkMode} />
+      <Header darkMode={darkMode} setDarkMode={setDarkMode} onScrollTo={scrollToSection} />
       <Hero />
-      <About />
-      <h1>Proyectos</h1>
+      <About ref={sectionRefs.sobreMi} />
+      <h1 ref={sectionRefs.proyectos}>Proyectos</h1>
       <Proyect
         proyectTitle="Gestión de Módulo Sanitario - GMS"
         proyectText="Proyecto Final de la carrera de Ingenieria en Sitemas de Información. Plataforma de gestión para la ONG Módulo Sanitario. Permite la planificación, análisis, asignación, construcción y control de módulos sanitarios para familias de bajos recursos de la ciudad de Córdoba. Incluyendo la generación de formularios, reportes, métricas para la toma de decisiones gestión de agenda y mapa interactivo."
@@ -72,7 +88,8 @@ function App() {
         ]}
       />
       <h1>Contacto</h1>
-      <Contact></Contact>
+      <Contact ref={sectionRefs.contacto}></Contact>
+      <ButtonScrollTop />
     </>
   );
 }

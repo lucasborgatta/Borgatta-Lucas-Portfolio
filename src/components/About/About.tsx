@@ -1,9 +1,10 @@
+import { forwardRef } from "react";
 import "./About.css";
 
-function About() {
+const About = forwardRef<HTMLDivElement>((_props, ref) => {
   return (
     <section className="about">
-      <h2>Sobre mí</h2>
+      <h2 ref={ref}>Sobre mí</h2>
       <p>
         Mi objetivo es dar mis primeros pasos en el mundo profesional, desarrollando mis habilidades técnicas y creciendo tanto a nivel laboral como
         personal.
@@ -16,6 +17,6 @@ function About() {
       <p>Estoy entusiasmado por seguir aprendiendo y aportar valor en equipos de trabajo dinámicos e innovadores.</p>
     </section>
   );
-}
+});
 
 export default About;

@@ -6,7 +6,15 @@ import { Tooltip, useMediaQuery } from "@mui/material";
 import SideBar from "../SideBar/SideBar";
 
 // src/components/Header.jsx
-function Header({ darkMode, setDarkMode }: { darkMode: boolean; setDarkMode: Dispatch<SetStateAction<boolean>> }) {
+function Header({
+  darkMode,
+  setDarkMode,
+  onScrollTo,
+}: {
+  darkMode: boolean;
+  setDarkMode: Dispatch<SetStateAction<boolean>>;
+  onScrollTo: (section: "proyectos" | "contacto" | "sobreMi") => void;
+}) {
   const isMobile = useMediaQuery("(max-width: 768px)");
 
   return (
@@ -32,9 +40,9 @@ function Header({ darkMode, setDarkMode }: { darkMode: boolean; setDarkMode: Dis
                 {darkMode ? <img src={sun_icon} width={18} height={18} color="#fff" /> : <img src={moon_icon} width={18} height={18} color="#fff" />}
               </button>
             </Tooltip>
-            <button className="button">Proyectos</button>
-            <button className="button">Sobre mí</button>
-            <button className="button">Contacto</button>
+            <button className="button" onClick={() => {onScrollTo("sobreMi")}}>Sobre mí</button>
+            <button className="button" onClick={() => {onScrollTo("proyectos")}}>Proyectos</button>
+            <button className="button" onClick={() => {onScrollTo("contacto")}}>Contacto</button>
           </div>
         </>
       )}
