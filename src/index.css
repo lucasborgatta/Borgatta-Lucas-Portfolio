@@ -16,7 +16,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  button {
+  .button {
     appearance: none;
     border: 1px solid var(--text-color);
     background-color: var(--button-bg-color);
@@ -40,16 +40,16 @@
     will-change: transform;
   }
 
-  button:disabled {
+  .button:disabled {
     pointer-events: none;
   }
 
-  button:hover {
+  .button:hover {
     box-shadow: var(--button-box-shadow);
     transform: translateY(-2px);
   }
 
-  button:active {
+  .button:active {
     box-shadow: none;
     transform: translateY(0);
   }

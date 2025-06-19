@@ -1,0 +1,5 @@
+.sideBar-container {
+    .MuiButtonBase-root {
+        color: var(--text-color);
+    }
+}
