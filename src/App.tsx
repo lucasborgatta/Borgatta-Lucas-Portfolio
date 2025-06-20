@@ -17,6 +17,7 @@ import { IoLogoVercel } from "react-icons/io5";
 import { FaSass } from "react-icons/fa";
 import Contact from "./components/Contact/Contact";
 import ButtonScrollTop from "./components/ButtonScrollTop/ButtonScrollTop";
+import ParticlesBackground from "./components/Particles/ParticlesBackground";
 
 function App() {
   const [darkMode, setDarkMode] = useState(true);
@@ -47,6 +48,7 @@ function App() {
 
   return (
     <>
+      <ParticlesBackground />
       <Header darkMode={darkMode} setDarkMode={setDarkMode} onScrollTo={scrollToSection} />
       <Hero />
       <About ref={sectionRefs.sobreMi} />
