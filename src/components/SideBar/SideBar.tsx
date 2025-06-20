@@ -1,6 +1,7 @@
 import { Box, Drawer, IconButton, List, ListItem, ListItemButton, ListItemText } from "@mui/material";
 import { useState } from "react";
 import DehazeIcon from "@mui/icons-material/Dehaze";
+import cv from "./../../assets/Borgatta Lucas CV.pdf";
 import "./SideBar.css";
 
 function SideBar({ onScrollTo }: { onScrollTo: (section: "proyectos" | "contacto" | "sobreMi") => void }) {
@@ -10,10 +11,18 @@ function SideBar({ onScrollTo }: { onScrollTo: (section: "proyectos" | "contacto
     setOpen(newOpen);
   };
 
+  function downloadFileFromPublic() {
+    const link = document.createElement("a");
+    link.href = cv;
+    link.download = "Borgatta Lucas CV";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
+
   const DrawerList = (
     <Box sx={{ width: 200 }} role="presentation" className="sideBar" onClick={toggleDrawer(false)}>
       <List>
-
         <ListItem disablePadding>
           <ListItemButton
             onClick={() => {
@@ -33,7 +42,7 @@ function SideBar({ onScrollTo }: { onScrollTo: (section: "proyectos" | "contacto
             <ListItemText primary={"Proyectos"} />
           </ListItemButton>
         </ListItem>
-        
+
         <ListItem disablePadding>
           <ListItemButton
             onClick={() => {
@@ -43,7 +52,12 @@ function SideBar({ onScrollTo }: { onScrollTo: (section: "proyectos" | "contacto
             <ListItemText primary={"Contacto"} />
           </ListItemButton>
         </ListItem>
-        
+
+        <ListItem disablePadding>
+          <ListItemButton onClick={downloadFileFromPublic}>
+            <ListItemText primary={"Descargar CV"} />
+          </ListItemButton>
+        </ListItem>
       </List>
     </Box>
   );

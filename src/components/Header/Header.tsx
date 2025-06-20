@@ -1,6 +1,7 @@
 import type { Dispatch, SetStateAction } from "react";
 import sun_icon from "./../../assets/sun_icon.svg";
 import moon_icon from "./../../assets/moon_icon.svg";
+import cv from "./../../assets/Borgatta Lucas CV.pdf";
 import "./Header.css";
 import { Tooltip, useMediaQuery } from "@mui/material";
 import SideBar from "../SideBar/SideBar";
@@ -16,6 +17,15 @@ function Header({
   onScrollTo: (section: "proyectos" | "contacto" | "sobreMi") => void;
 }) {
   const isMobile = useMediaQuery("(max-width: 768px)");
+
+  function downloadFileFromPublic() {
+    const link = document.createElement("a");
+    link.href = cv;
+    link.download = "Borgatta Lucas CV";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
 
   return (
     <header>
@@ -40,9 +50,33 @@ function Header({
                 {darkMode ? <img src={sun_icon} width={18} height={18} color="#fff" /> : <img src={moon_icon} width={18} height={18} color="#fff" />}
               </button>
             </Tooltip>
-            <button className="button" onClick={() => {onScrollTo("sobreMi")}}>Sobre mí</button>
-            <button className="button" onClick={() => {onScrollTo("proyectos")}}>Proyectos</button>
-            <button className="button" onClick={() => {onScrollTo("contacto")}}>Contacto</button>
+            <button
+              className="button"
+              onClick={() => {
+                onScrollTo("sobreMi");
+              }}
+            >
+              Sobre mí
+            </button>
+            <button
+              className="button"
+              onClick={() => {
+                onScrollTo("proyectos");
+              }}
+            >
+              Proyectos
+            </button>
+            <button
+              className="button"
+              onClick={() => {
+                onScrollTo("contacto");
+              }}
+            >
+              Contacto
+            </button>
+            <button className="button" onClick={downloadFileFromPublic}>
+              Descargar CV
+            </button>
           </div>
         </>
       )}
