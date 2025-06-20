@@ -54,7 +54,7 @@ function Proyect({
           <h3 style={{ margin: 0 }}>Rol en el proyecto:</h3>
           <p style={{ margin: 0 }}>{proyectRol}</p>
         </div>
-        <h3>Tecnologias utilizadas</h3>
+        <h3>Tecnologias utilizadas:</h3>
         <div className="technologies-container" style={proyectImages === undefined ? { marginBottom: "0px" } : {}}>
           {technologies}
         </div>
@@ -83,16 +83,18 @@ function Proyect({
         </div>
         {(proyectRepository || proyectLink) && (
           <>
-            <h3>Repositorio</h3>
+            <h3>Repositorio y página del proyecto:</h3>
             <div className="technologies-container">
-              <TecButton toolTip="Demo/Página" icon={<TbWorldWww size={32} />} color="ffffff" disabled={!proyectLink} onClick={openLink}></TecButton>
-              <TecButton
-                toolTip="Github"
-                icon={<FaGithub size={32} />}
-                color="ffffff"
-                disabled={!proyectRepository}
-                onClick={openRepository}
-              ></TecButton>
+              {proyectRepository && <TecButton toolTip="Repositorio" icon={<FaGithub size={32} />} color="ffffff" onClick={openRepository}></TecButton>}{" "}
+              {proyectLink && (
+                <TecButton
+                  toolTip="Demo - Página"
+                  icon={<TbWorldWww size={32} />}
+                  color="ffffff"
+                  disabled={!proyectLink}
+                  onClick={openLink}
+                ></TecButton>
+              )}
             </div>
           </>
         )}

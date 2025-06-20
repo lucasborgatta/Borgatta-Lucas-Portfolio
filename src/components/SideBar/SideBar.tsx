@@ -11,7 +11,7 @@ function SideBar({ onScrollTo }: { onScrollTo: (section: "proyectos" | "contacto
   };
 
   const DrawerList = (
-    <Box sx={{ width: 150 }} role="presentation" className="sideBar" onClick={toggleDrawer(false)}>
+    <Box sx={{ width: 200 }} role="presentation" className="sideBar" onClick={toggleDrawer(false)}>
       <List>
 
         <ListItem disablePadding>

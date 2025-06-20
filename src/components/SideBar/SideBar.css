@@ -8,9 +8,9 @@
   .MuiPaper-root {
     background-color: var(--button-bg-color);
     .sideBar {
-        .MuiTypography-root {
-            color: var(--text-color);
-        }
+      .MuiTypography-root {
+        color: var(--text-color);
+      }
     }
   }
 }
